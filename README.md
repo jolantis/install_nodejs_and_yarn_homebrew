@@ -1,4 +1,4 @@
-# Install NVM, NodeJS, Yarn via Homebrew
+# Install NVM, NodeJS, and Yarn via Homebrew (macOS Monterey)
 
 ## Notice
 
@@ -41,9 +41,9 @@
 
     $ `nvm ls-remote`
     
-6. Install NodeJS (_Recommended to install LTS version. Current LTS is Fermium_)
+6. Install NodeJS (_Recommended to install LTS version. Current LTS is Gallium_)
     
-    $ `nvm install --lts=Fermium`
+    $ `nvm install --lts=Gallium`
     
 7. Check installed NodeJS in your machine.
 
@@ -77,17 +77,17 @@ See more about `nvm` : https://github.com/creationix/nvm
     
 5. Create blank folder and create symbol link `node` folder from `nvm` for `yarn` in Homebrew.
 
-    $ `nvm current` => v14.15.0 (Latest LTS: Fermium) (This should be **Global** node version)
+    $ `nvm current` => v16.14.2 (Latest LTS: Gallium) (This should be **Global** node version)
     
-    $ `mkdir /usr/local/Cellar/node`
+    $ `mkdir /opt/homebrew/Cellar/node`
     
-    $ `ln -s ~/.nvm/versions/node/$(nvm current)/ /usr/local/Cellar/node`
+    $ `ln -s ~/.nvm/versions/node/$(nvm current)/ /opt/homebrew/Cellar/node`
 
-6. Overwrite `node, npm and npx` from linked `node` in `/usr/local/Cellar/node` to `/usr/local/bin/` homebrew
+6. Overwrite `node, npm and npx` from linked `node` in `/opt/homebrew/Cellar/node` to `/usr/local/bin/` homebrew
 
     $ `brew link --overwrite node`
     
-7. Checkout `ls -la /usr/local/bin` to see overwrited `node, npm and npx`
+7. Checkout `ls -la /opt/homebrew/Cellar/node` to see overwrited `node, npm and npx`
     
 8. Checkout `brew doctor` again. There shouldn't have **WARNING** message.
 
@@ -127,7 +127,7 @@ See more about `nvm` : https://github.com/creationix/nvm
 
 2. Remove the symbol link which we linked `node` in Homebrew `/usr/local/Cellar/node`
 
-    $ `rm -rf /usr/local/Cellar/node`
+    $ `rm -rf /opt/homebrew/Cellar/node`
 
 3. Unpin `node` in Homebrew for upgrading `yarn`
 
